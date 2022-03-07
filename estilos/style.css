@@ -5,10 +5,12 @@
 html{
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
     
 }
 body{
     font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
 }
 .centrarTexto{
     text-align: center;
@@ -93,6 +95,7 @@ body{
     top: 0rem;
     left: 0rem;
     transition: all .5s ease;
+    z-index: 2;
 }
 .active{
     transform: translate(-600px);
@@ -154,7 +157,7 @@ a{
 
 /**Main cards*/
 .card{
-    z-index: -1;
+    z-index: 1;
 }
 .card-body{
     text-align: center;
@@ -179,6 +182,8 @@ a{
 font-weight:bold;
 }
 @media (min-width:768px){
+
+
 .card-title{
     font-family: 'Open Sans', sans-serif;
     margin-top:1rem ;
@@ -200,6 +205,8 @@ font-weight:bold;
 }
 }
 /**Footer**/
-footer{
+.footer{
     background: var(--colorSegundario);
+    margin-bottom: -1rem;
 }
+
