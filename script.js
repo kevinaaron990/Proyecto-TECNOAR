@@ -243,10 +243,24 @@ renderizarCarrito();
 
 
 
-
+/*
 const botonCelulares = document.getElementById('botonCelulares');
 const botonNotebooks = document.getElementById('botonNotebooks');
 
 
-botonCelulares.addEventListener('click',ordenarPorCelulares);
+botonCelulares.addEventListener('click',ordenarPorCelulares);*/
 
+//Contacto Formulario
+const $form = document.querySelector('#formulario')
+    const $buttonMailto = document.querySelector('#botonEmail')
+
+    $form.addEventListener('submit', handleSubmit)
+
+    function handleSubmit(event) {
+      event.preventDefault()
+      const form = new FormData(this)
+      $buttonMailto.setAttribute('href', `mailto:kevinhorvath39@gmail.com?subject=nombre ${form.get('nombre')}  correo ${form.get('email')}&body=${form.get('mensaje')}`)
+      $buttonMailto.click()
+    }
+
+    

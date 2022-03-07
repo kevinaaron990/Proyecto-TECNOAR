@@ -61,3 +61,6 @@ a{
     justify-content: center;
     gap: 1rem;
 }
+#botonEmail{
+    opacity: 0;
+}
