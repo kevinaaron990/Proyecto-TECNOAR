@@ -249,7 +249,19 @@ const botonNotebooks = document.getElementById('botonNotebooks');
 
 
 botonCelulares.addEventListener('click',ordenarPorCelulares);*/
-
+//Icono Menu
+const iconoMenu = document.getElementById('iconoMenu');
+const menu = document.getElementById('menu');
+iconoMenu.addEventListener('click',(e) => {
+    menu.classList.toggle('active');
+    document.body.classList.toggle('opacity');
+    const ruta  = e.target.getAttribute('src');
+    if(ruta == 'img-logo/icono-menu.png'){
+        e.target.setAttribute('src','img-logo/icono-menu2.png')
+    }else{
+        e.target.setAttribute('src','img-logo/icono-menu.png')
+    }
+})
 //Contacto Formulario
 const $form = document.querySelector('#formulario')
     const $buttonMailto = document.querySelector('#botonEmail')

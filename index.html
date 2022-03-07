@@ -15,25 +15,31 @@
 <body>
     
     <header class="header">
-        <img src="img-logo/tecnoAR.png" alt="imagen logo" class="img-logo"> 
+        <a href="index.html"><img src="img-logo/logo1.png" alt="imagen logo" class="img-logo"></a>
         <div class="contenedorHeader">
-            <h1 class="tituloPrincipal">Tecno<span class="span">AR</span></h1>
+            <h1 class="tituloPrincipal"><a href="index.html">Tecno<span class="span">AR</span></a></h1>
             <form class="barra">
                 <input type="text" class="barra__boton" placeholder="Buscar">
             </form>
-                
-            <nav>
-                <a href="#">Home</a>
+            <div class="iconoMenu">
+                <img src="img-logo/icono-menu.png" alt="icono menu" id="iconoMenu">
+            </div>
+            <div class="contenidoMenu active" id="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#formulario">Contacto</a></li>
+                </ul>
+            </div>  
+            <nav class="navegacion">
+                <a href="index.html">Home</a>
                 <a href="#">Nosotros</a>
-                <a href="#">Contacto</a>
+                <a href="#formulario">Contacto</a>
             </nav>
         </div>
     </header>
     <div class="container">
-        <div class="button">
-            <button id="botonCelulares" class="btn btn-dark ">Celulares</button>
-            <button id="botonNotebooks" class="btn btn-dark ">NoteBooks</button>
-        </div>
+       
         <div class="row">
             
             <main id="items"  class="col-sm-8 row"></main>
@@ -51,11 +57,13 @@
 
         <!--Contacto-->
         <section class="contacto">
+            
             <div class="u-wrapper">
+                
                 <div class="contacto__contenido mb-3">
-
+                    <hr>
                     <form id="formulario" action="" class="mb-3">
-                        <h3 class="contacto__titulo"></h3>
+                        <h3 class="contacto__titulo centrarTexto"> Contactanos</h3>
                         <label for="nombre"class="form-label" >Nombre Completo</label>
                         <input type="text" id="nombre" class="form-control" placeholder="Nombre Completo" required  name="nombre">
                         <label for="email" class="form-label" >Correo Electronico</label>
@@ -70,6 +78,9 @@
             </div>
         </section>
     </div>
+    <footer>
+        <p class="tituloPrincipal"><a href="index.html">Tecno<span class="span">AR</span></a></p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
