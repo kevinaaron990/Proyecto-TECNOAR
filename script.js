@@ -133,12 +133,15 @@ function renderizarProductos(){
 function agregarProductoAlCarrito(e){
     //agregamos un nodo a nuestro array carrito
     carrito.push(e.target.getAttribute('marcador')) // llegamos al atributo mardacor
-    
+   
+   
+    agregadoAlerta();
     //Actualizamos el carrito
     renderizarCarrito();
 
     //Actualizamos el LocalStorage
     guardarEnLocalStorage();
+
 }
 
 //dibujamos los productos guardados en el carrito 
@@ -214,6 +217,7 @@ function calcularTotal(){
 
 //Vaciar Carrito total
 function vaciarCarrito(){
+    borrarAlerta ()
     //borramos los productos en carrito reinciando el array
     carrito = [];
     //renderizamos los cambios 
@@ -240,6 +244,7 @@ domVaciarCarrito.addEventListener('click',vaciarCarrito);
 cargarLocalStorage();
 renderizarProductos();
 renderizarCarrito();
+
 
 
 
@@ -275,6 +280,33 @@ const form = document.querySelector('#formulario')
       const form = new FormData(this)
       buttonMailto.setAttribute('href', `mailto:kevinhorvath39@gmail.com?subject=nombre ${form.get('nombre')}  correo ${form.get('email')}&body=${form.get('mensaje')}`)
       buttonMailto.click()
+      agregadoAlerta ();
     }
 
     
+    function agregadoAlerta (){
+        
+        Toastify({
+            text: "Agregado al carrito",
+            duration: 3000,
+            gravity: "top", 
+            position: "right", 
+            stopOnFocus: true,
+            style: {
+              background: "linear-gradient(to right, #000, #000)",
+              
+            },
+            
+          }).showToast();
+    }
+
+    function borrarAlerta (){
+        swal({
+            title: "Carrito Vacio",
+            icon: "success",
+            button: "Continuar",
+            dangerMode: true,
+          })
+         
+    }
+
