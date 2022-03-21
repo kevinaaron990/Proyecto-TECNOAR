@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "nombre": "Samsung S22",
+        "precio": 200000,
+        "imagen": "img/samsung-s22.png"
+    },
+    {
+        "id": 2,
+        "nombre": "Iphone 13",
+        "precio": 250000,
+        "imagen": "img/iphone-13.png"
+    },
+    {
+        "id": 3,
+        "nombre": "Motorola Edge 20",
+        "precio": 100000,
+        "imagen": "img/motoedge-20.png"
+    },
+    {
+        "id": 4,
+        "nombre": "Xiamomi Mi 10 Pro",
+        "precio": 110000,
+        "imagen": "img/Xiaomi_mi10.png"
+    },
+    {
+        "id": 5,
+        "nombre": "Samsung Galaxy Z Flip3",
+        "precio":  160000,
+        "imagen": "img/z-flip-3.png"
+    },
+    {
+        "id": 6,
+        "nombre": "Apple iPhone SE 2020",
+        "precio": 140000,
+        "imagen": "img/iphone-se-2020.png"
+    },
+    {
+        "id": 7,
+        "nombre": "Moto G200",
+        "precio": 100000,
+        "imagen": "img/moto-g200.png"
+    },
+    {
+        "id": 8,
+        "nombre": "Mac Book PRO",
+        "precio": 400000,
+        "imagen": "img/macbook-pro14.png"
+    },
+    {
+        "id": 9,
+        "nombre": "Lenovo i3",
+        "precio": 120000,
+        "imagen": "img/lenovo-i3.png"
+    },
+    {
+        "id": 10,
+        "nombre": "HP 240 G7",
+        "precio": 50000,
+        "imagen": "img/hp240-g7.png"
+    },
+    {
+        "id": 11,
+        "nombre": "Razer Blade 15",
+        "precio":  400000,
+        "imagen": "img/RazerBlade-15.png"
+    },
+    {
+        "id": 12,
+        "nombre": "Asus ZenBook",
+        "precio": 120000,
+        "imagen": "img/AsusZenBook.png"
+    }
+]

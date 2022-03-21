@@ -89,43 +89,48 @@ const milocalStorage = window.localStorage;
 //CREO MIS ELEMENTOS A TRAVEZ DE MI productosDatos
 
 function renderizarProductos(){
-    productosDatos.forEach((producto) =>{
-        //estructura
-        const miNodo = document.createElement('div'); //creo el elemento 
-        miNodo.classList.add('card', 'col-sm-4'); // crep las clases en este caso de bootstrap
-        //Body
-        const miNodoCardBody = document.createElement('div');
-        miNodoCardBody.classList.add('card-body');
-        //titulo
-        const miNodoTitulo = document.createElement('h5');
-        miNodoTitulo.classList.add('card-title');
-        miNodoTitulo.textContent = producto.nombre;// utilizo textContent para el contenido del texto y llamo por parametro al nombre de mi producto
-        //imagen
-        const miNodoImg = document.createElement('img');
-        miNodoImg.classList.add('img-fluid','rounded');
-        miNodoImg.style.height = '200px'
-        miNodoImg.setAttribute('src', producto.imagen);// agrego atributos mediante setAtribute en este caso el src de la img seguido del producto.imagen
-        //precio
-        const miNodoPrecio = document.createElement('p');
-        miNodoPrecio.classList.add('card-text');
-        miNodoPrecio.textContent = `${producto.precio} ${divisa}`;
-        //Boton
-        const miNodoBoton = document.createElement('button');
-        miNodoBoton.classList.add('btn', 'btn-dark');
-        miNodoBoton.textContent = 'Agregar Al Carrito';
-        miNodoBoton.setAttribute('marcador', producto.id);
-        miNodoBoton.addEventListener('click', agregarProductoAlCarrito);//llamo al evento click y a la funcion agregarProdcutosAlCarrito
-
-        //incertamos lo creado al DOM con appendChild
-
-        miNodoCardBody.appendChild(miNodoImg); // agrego cada uno de mis contenidos de la card a mi cardBody
-        miNodoCardBody.appendChild(miNodoTitulo);
-        miNodoCardBody.appendChild(miNodoPrecio);
-        miNodoCardBody.appendChild(miNodoBoton);
-        miNodo.appendChild(miNodoCardBody); // agrego cardBody a miNodo la estructura de mi card
-        domItems.appendChild(miNodo); // agrego miNodo a mi elemento Items
-
+    fetch('./json/productos.json')
+    .then(res => res.json())
+    .then(productos =>{
+        productos.forEach((producto) =>{
+            //estructura
+            const miNodo = document.createElement('div'); //creo el elemento 
+            miNodo.classList.add('card', 'col-sm-4'); // crep las clases en este caso de bootstrap
+            //Body
+            const miNodoCardBody = document.createElement('div');
+            miNodoCardBody.classList.add('card-body');
+            //titulo
+            const miNodoTitulo = document.createElement('h5');
+            miNodoTitulo.classList.add('card-title');
+            miNodoTitulo.textContent = producto.nombre;// utilizo textContent para el contenido del texto y llamo por parametro al nombre de mi producto
+            //imagen
+            const miNodoImg = document.createElement('img');
+            miNodoImg.classList.add('img-fluid','rounded');
+            miNodoImg.style.height = '200px'
+            miNodoImg.setAttribute('src', producto.imagen);// agrego atributos mediante setAtribute en este caso el src de la img seguido del producto.imagen
+            //precio
+            const miNodoPrecio = document.createElement('p');
+            miNodoPrecio.classList.add('card-text');
+            miNodoPrecio.textContent = `${producto.precio} ${divisa}`;
+            //Boton
+            const miNodoBoton = document.createElement('button');
+            miNodoBoton.classList.add('btn', 'btn-dark');
+            miNodoBoton.textContent = 'Agregar Al Carrito';
+            miNodoBoton.setAttribute('marcador', producto.id);
+            miNodoBoton.addEventListener('click', agregarProductoAlCarrito);//llamo al evento click y a la funcion agregarProdcutosAlCarrito
+    
+            //incertamos lo creado al DOM con appendChild
+    
+            miNodoCardBody.appendChild(miNodoImg); // agrego cada uno de mis contenidos de la card a mi cardBody
+            miNodoCardBody.appendChild(miNodoTitulo);
+            miNodoCardBody.appendChild(miNodoPrecio);
+            miNodoCardBody.appendChild(miNodoBoton);
+            miNodo.appendChild(miNodoCardBody); // agrego cardBody a miNodo la estructura de mi card
+            domItems.appendChild(miNodo); // agrego miNodo a mi elemento Items
+    
+        })
     })
+    
 };
 
 //Evento para añadir un producto a mi carrito de compras 
@@ -156,11 +161,16 @@ function renderizarCarrito(){
     //generamos los nodos apartir de carrito
     carritoDuplicados.forEach((item) =>{
         //obtenemos el item que necesitamos de mi productosDatos en este caso el ID
-        const miItemId = productosDatos.filter((itemProductosDatos) =>{
+        fetch('./json/productos.json')
+        .then(res =>res.json())
+        .then(productos =>{
+
+        
+        const miItemId = productos.filter((itemProductosDatos) =>{
             //si coiciden los ID ,solo puede haver un producto en el carrito con la misma ID
             return itemProductosDatos.id === parseInt(item);
         });
-
+    
         //Cuenta el numero de veces que se repita el producto
         const numeroUnidadesItem = carrito.reduce((total,itemId) =>{
             //si coinciden los id incremento el contador caso contrario lo mantego
@@ -181,7 +191,8 @@ function renderizarCarrito(){
        //Incertamos lo crado al DOM
        miNodo.appendChild(miBotonBorrar);//adentro de mmiNodo li va estar mi botton
        domCarrito.appendChild(miNodo); // adentro de mi domCarrito va estar mi nodo li
-    });
+    }) });
+
     //renderizamos el precio total en el html
     domTotal.textContent = calcularTotal();
 };
@@ -204,6 +215,7 @@ function borrarItemCarrito(e){
 //Calcular precio total
 
 function calcularTotal(){
+        
     //reccoremos el array del carrito 
     return carrito.reduce((total,item) =>{
         //de cada elemento obtenemos su precio por el reduce 
@@ -283,6 +295,7 @@ const form = document.querySelector('#formulario')
       agregadoAlerta ();
     }
 
+    //alertas con sweetAlert y Toastyfy
     
     function agregadoAlerta (){
         
