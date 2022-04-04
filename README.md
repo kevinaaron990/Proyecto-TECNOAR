@@ -1,4 +1,5 @@
-# Proyecto-TECNOAR
+# Proyecto-TECNOAR  -Kevin Horvath
+
 Proyecto Final CoderHouse 
 
  Built With:
