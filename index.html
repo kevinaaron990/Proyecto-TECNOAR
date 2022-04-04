@@ -5,85 +5,211 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TecnoAR</title>
+    <link rel="shortcut icon" href="img/logo3.png">
+    <script src="https://kit.fontawesome.com/15350fe26d.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="estilos/normalize.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="estilos/estilos.css">     
 </head>
 <body>
     
-    <header class="header">
-        <a href="index.html"><img src="img-logo/logo1.png" alt="imagen logo" class="img-logo"></a>
-        <div class="contenedorHeader">
-            <h1 class="tituloPrincipal"><a href="index.html">Tecno<span class="span">AR</span></a></h1>
-            <form class="barra">
-                <input type="text" class="barra__boton" placeholder="Buscar">
-            </form>
-            <div class="iconoMenu">
-                <img src="img-logo/icono-menu.png" alt="icono menu" id="iconoMenu">
+    <nav class="nav-main">
+        <img id="logo" src="img/logo3.png" alt="logo tecnoAR" class="nav-brand">
+        <h1 class="marca"><a href="index.html">
+           TecnoAR
+        
+        </a></h1>
+        <ul class="nav-menu">
+            <li>
+                <a id="Productos" href="#">Productos</a>
+            </li>
+            <li>
+                <a id="Celular" href="#">Celular</a>
+            </li>
+            <li>
+                <a id="Notebook" href="#">Notebook</a>
+            </li>
+            <li>
+                <a id="Accesorios" href="#">Accesorios</a>
+            </li>
+            <li>
+                <a id="Contacto" href="#">Contacto</a>
+            </li>
+        </ul>
+        <ul class="nav-menu-rigth">
+            <li>
+                <div>
+                    <button id="carrito" >
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </li>
+            <li id="carro">
+                <span class="cart__count"></span>
+            </li>
+        </ul>
+    </nav>
+    <hr>
+    <section>
+        <div class="compraFinal">
+            <div class="capa"></div>
+            <div id="infoCompra" class="infoCompra">
+                <div>
+                    <i id="back" class="fas fa-arrow-left"></i> 
+                    <h1>Pedido:</h1>
+                </div>
+                <div id="compraFinalizada"></div>
+                <label class="label-pagos">Elige el medio de pago:</label>
+                <select id="pagos" class="form-select">
+                    <option value="1">Efectivo</option>
+                    <option value="2">Tarjeta 1 Cuota sin interes</option>
+                    <option value="3">Tarjeta 3 Cuotas sin interes</option>
+                    <option value="4">Tarjeta 6 Cuotas sin interes</option>
+                    <option value="5">Tarjeta 12 Cuotas sin interes</option>
+                </select>
+                <button type="button" class="btn btn-dark btn-lg finalizada btn-confirmar">Confirmar Compra</button>
             </div>
-            <div class="contenidoMenu active" id="menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#formulario">Contacto</a></li>
-                </ul>
-            </div>  
-            <nav class="navegacion">
-                <a href="index.html">Home</a>
-                <a href="#">Nosotros</a>
-                <a href="#formulario">Contacto</a>
-            </nav>
         </div>
-    </header>
-    <div class="container">
-       
-        <div class="row gridMain">
-            
-            <main id="items"  class="col-sm-8 row"></main>
-            <!-- Carrito -->
-            <aside class="col-sm-4 gridMain__aside">
-                <h2>Carrito</h2>
-                <!-- Elementos del carrito -->
-                <ul id="carrito" class="list-group"></ul>
-                <hr>
+    </section>
+    <aside>
+        <div id="sidebar" class="sidebar">
+            <div id="cont-sidebar"></div>
+            <div id="ConfirmarCompra">
+                <label id="traslado"><input type="checkbox" id="envio" > Incluir Envío ($ 5000)</label>
+                <button class="btn btn-dark btn-ConfirmarCompra" type="button">Confirmar Pedido</button>     
+            </div>
+        </div>      
+    </aside>  
+    <div class="container"> 
+    <section id="SeccionCarousel">
+        <div class="carrousel">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                 
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="img/banner1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Nosotros</h5>
+                      <p>Somos Una tienda Online de Productos Tecnologicos que busca expadirse</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/salebanner.jpg" class="d-block w-100" alt="...">
+                    
+                  </div>
+                  
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+    </section>
     
-                <p class="text-right">Total: <span id="total"></span>&dollar;</p>
-                <button id="boton-vaciar" class="btn btn-dark">Vaciar Carrito</button>
-            </aside>
+    <section id="SeccionCards">
+        <div class="cards">
+           <!--cards de productos genereadas por js-->   
+        </div> 
+    </section>
+    <br>
+    <section id="SeccionMarcas ">
+        <div class="marcas">
+            <div class="container-marcas">
+            <img src="img/marcas/apple1.png" alt="">
+            <img src="img/marcas/samsung.png" alt="">
+            <img src="img/marcas/hp.png" alt="">
+            <img src="img/marcas/lenovo.png" alt="">
+            <img src="img/marcas/motorola.png" alt="">
+            <img src="img/marcas/razer.png" alt="">
+            <img src="img/marcas/sony.png" alt="">
+            <img src="img/marcas/xiaomi.png" alt="">
+            </div>
         </div>
-
-        <!--Contacto-->
-        <section class="contacto">
-            
-            <div class="u-wrapper">
-                
-                <div class="contacto__contenido mb-3">
-                    <hr>
-                    <form id="formulario" action="" class="mb-3">
-                        <h3 class="contacto__titulo centrarTexto"> Contactanos</h3>
-                        <label for="nombre"class="form-label" >Nombre Completo</label>
-                        <input type="text" id="nombre" class="form-control" placeholder="Nombre Completo" required  name="nombre">
-                        <label for="email" class="form-label" >Correo Electronico</label>
-                        <input type="text" id="email" class="form-control" placeholder="Ingrese su Email" required  name="email">
-                        <label for="mensaje" class="form-label" >Consulta</label>
-                        <textarea name="mensaje" id="mensaje" class="form-control" cols="30" rows="10"></textarea>
-                        <button type="submit" class="btn btn-dark">Enviar Consulta</button>
-
+    </section>
+    <br>
+    <section id="SeccionFormulario">
+        <div class="form">
+            <div class="contact-wrapper">
+                <div class="contact-form">
+                    <h2>Contáctanos</h2>
+                    <form action="" id="form">
+                         <p>
+                             <label>Nombre</label>
+                             <input type="text" id="fullname">
+                         </p>
+                         <p>
+                            <label>Email</label>
+                            <input type="email" id="email">
+                        </p>
+                        <p>
+                            <label>Asunto</label>
+                            <input type="text" id="affair">
+                        </p>
+                        <p class="block">
+                            <label>Mensaje</label>
+                            <textarea id="message" rows="3"></textarea>
+                        </p>
+                        <p class="block">
+                            <button type="submit" id="enviaFormulario">
+                                ENVIAR
+                            </button>
+                        </p>
                     </form>
-                    <a href="mailto:kevinhorvath39@gmail.com" id="botonEmail">email</a>
+                </div>
+                <div class="contact-info">
+                    
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Meeks 922</li>
+                        <li><i class="fas fa-phone-square-alt"></i> 42143425</li>
+                        <li><i class="fas fa-envelope-open-text"></i>tecnoar@gmail.com</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    <BR></BR>
+    <section class="social">
+        <h4>Síguenos</h4>
+        <div class="links">
+            
+            <a href="https://www.instagram.com/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>   
+            <a href="#" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a> 
+        </div>
+</section>
+    
     </div>
     <footer class="footer">
-        <p class="tituloPrincipal"><a href="index.html">Tecno<span class="span">AR</span></a></p>
+        <h3>TecnoAR Copyright - 2021</h3>
     </footer>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="script.js"></script>
+
+    
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--SCRIPTS-->
+    <script src="JS/botones.js"></script>
+    <script src="JS/clases/prodDelcarrito.js"></script>
+    <script src="JS/clases/carrito.js"></script>
+    <script src="JS/variables.js"></script>
+    <script src="JS/funciones.js"></script>
+    <!--SweetAlert-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--Boostrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

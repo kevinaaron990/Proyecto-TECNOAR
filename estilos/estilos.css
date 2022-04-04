@@ -1,0 +1,676 @@
+* {
+    box-sizing: border-box ;
+    margin: 0 ;
+    padding: 0 ;
+}
+
+body {
+    background: #f0e8e8  ;
+    color: #fff ;
+    background-color: #f0e8e8 ;
+    font-size: 16px ;
+    font-family: 'Roboto Mono', monospace;
+}
+
+a {
+    color: #fff !important;
+    text-decoration: none ;
+}
+
+ul {
+    list-style: none ;
+}
+
+.container {
+    width: 98% ; 
+    margin: auto ;
+}
+
+.marca {
+    margin-left: 10px ;
+    margin-top: 10px ;
+    font-size: 40px ;
+}
+
+/*-------------------------------------------Navigation-----------------------------------*/
+#logo {
+    cursor: pointer;
+}
+
+.nav-main {
+    width: 100%;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center ;
+    background-color: #000000;
+    position: fixed ;
+    z-index: 3;
+    
+}
+
+hr {
+    margin-top: 0px;
+}
+
+.nav-brand {
+    width: 90px;
+    margin-left: 80px;
+}
+
+/*-------------------------------------Nav Left--------------------------------------------*/
+.nav-main ul {
+    display: flex ; 
+}
+
+.nav-main ul li {
+    padding: 20px ;
+}
+
+.nav-main ul li a:hover {
+   border-bottom: 2px solid #fff  ;
+}
+
+.nav-menu {
+    flex: 4 !important;
+    margin-left: 20px ;
+    margin: 0;
+}
+
+.nav-menu-rigth button{
+    color: #fff;
+    background: transparent;
+    border: none;
+}
+
+#carrito > i{
+    font-size: 1.5rem;
+    margin-top: 13px;
+    padding-left: 10px;
+    position:relative;
+}
+
+.cart__count {
+    right: 2rem;
+    font-size: 1rem;
+    color: #fff;
+    z-index: 3;
+    position:relative;
+}
+
+/*---------------------------------------SIDEBAR-----------------------------------------*/
+#cont-sidebar{
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    height: 500px;
+}
+
+.sidebar {
+    background-color:#222;
+    width: 450px;
+    height: 100%;
+    position: fixed;
+    right: -450px;
+    display:none;
+    visibility: visible;
+    top: 90px;
+    z-index: 10;
+    border-left: 2px solid #fff;
+}
+
+#sidebar {
+    display: none;
+}
+
+#ConfirmarCompra{
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #fff;
+}
+
+#ConfirmarCompra button {
+    justify-content: center;
+    margin-top: 15px;
+    margin-left: 130px;
+    width: 200px;
+}
+
+#traslado{
+    columns: #fff;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+/*-----------------------------------CARROUSEL-------------------------------------------*/
+.carrousel {
+    margin-top: 100px;
+    height: 620px;
+    border: 2px solid #fff;
+}
+
+.carrousel img{
+    height: 618px;
+    border: 2px solid #fff;
+}
+
+.carousel-caption {
+    background-color: #000;
+    border: 2px solid #fff;
+}
+
+.carousel-caption h5 {
+    font-size: 30px;
+    padding-top: 10px ;
+}
+
+.carousel-caption p {
+    color: #fff ;
+}
+
+/*-----------------------------------------SWEET ALERT-------------------------------------*/
+.SeewAlert{
+    box-sizing: none ;
+}
+
+.p-sweetAlert{
+    color: #fff;
+}
+
+/*------------------------------------MARCAS-----------------------------------------------*/
+.marcas {
+    height: 570px;
+    margin-top: 2rem;
+    position: relative;
+}
+
+.marcas div{
+    background-color: #f0e8e8;
+    height: 100%;
+    width: 100%;
+}
+
+.container-marcas {
+    position: absolute;
+    display: grid ;
+    grid-template-columns: repeat(4, 1fr) ;
+    grid-template-rows: repeat(2, 1fr) ;
+    gap: 5px ;
+    align-items: center ;
+}
+
+.container-marcas img {
+    width: 280px;
+}
+
+/*------------------------------------CARDS-----------------------------------------------*/
+.cards {
+    margin-top: 3rem;
+    height: auto; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    visibility: visible;
+}
+
+.cards .card {
+    background: #2f2a2a;
+    height: 100% ;
+    border: 1px solid #fff;
+}
+
+.cards h5,h6,p {
+    color: #fff!;
+    margin-left: 1rem;
+    margin-top: 1rem ;
+}
+
+
+
+.card-body a{
+    width: 33.3%;
+    margin-left: 2%;
+    margin-bottom: 1em;
+}
+
+.card-boton{
+    
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.cont-img {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.cont-img img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+/*------------------------------------COMPRAS REALIZADAS----------------------------------------*/
+.list-group-item {
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.trash {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.trash > .MasMenos{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.trash >.MasMenos >.fa-minus-square,
+.trash >.MasMenos >.fa-plus-square {
+    width: 12px ;
+    margin-left: 20px;
+    margin-top: 5px;
+    justify-self: center;
+    cursor: pointer;
+}
+
+.trash > .fa-trash-alt  {
+    font-size: 25px;
+    margin-left: 34px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+
+.trash span{
+   font-size: 1em;
+   margin-top: 5px;
+}
+
+.ms-1{
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ms-1 p{
+    margin-top: 13px ;
+    font-size: 1em;
+}
+
+.list-group-item img{
+    width: 80px;
+    margin-left: 40px;
+}
+
+.list-group-item .ms-1 p{
+    color: #fff !important;
+}
+
+/*------------------------------------------SOCIAL------------------------------------------*/
+.fab{
+    color: black;
+}
+.social {
+    color: black;
+    
+    margin: 30px ;
+}
+
+.social h4{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.links{
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+}
+
+.links a {
+    margin: 0 30px ;
+}
+
+.links a i {
+    font-size: 2.5rem ;
+}
+
+/*----------------------------------------CONTACT INFO---------------------------------------*/
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.contact-form {
+    height: 20rem;
+    background: #c1b9b9;
+    grid-column: 1/3;
+}
+
+.contact-form h2{
+    text-align: center;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.contact-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact-form form button,
+.contact-form form input,
+.contact-form form textarea {
+    width: 50%;
+    border: none;
+    background: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    color: #e9e2e2;
+    outline: none;
+}
+
+.contact-form form button {
+    background: rgb(0, 0, 0);
+    border: 0;
+    padding: 1rem;   
+    }
+
+.contact-form form button:hover,
+.contact-form form button:focus {
+    color: black;
+    outline: 0;
+    cursor: pointer;
+}
+
+.contact-info {
+    height: 20rem;
+    background: #c1b9b9;
+    grid-column: 3/4;
+    border-left: #000 solid 1px;
+}
+
+.contact-info h2,
+.contact-info ul,
+.contact-info p {
+    margin: 0;
+}
+
+.contact-info h2,
+.contact-info p {
+    text-align: center;
+}
+
+.contact-info h2 {
+    margin-top: 0;
+}
+
+.contact-info p {
+    margin-bottom: 0;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    padding: 1rem;
+}
+
+/*-----------------------------------------FOOTER-----------------------------------------------*/
+.footer {
+    width: 100%;
+    height: 90px;
+    background: #000000 ;
+    font-size: 2rem;
+    padding: 1rem ;
+    text-align: center ;
+    border: 2px solid #fff;
+}
+
+.footer h3 {
+    margin-top: 2rem;
+    font-size: 1rem ;
+    color:#ffffff ;
+    font-weight: 700;
+}
+
+/*---------------------------------FINALLIZACION DE COMPRAS-------------------------------------*/
+.compraFinal{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.capa {
+    width: 100%;
+    height: 5130px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0, 0.6);
+    z-index: 70;
+}
+
+.infoCompra{
+    width: 800px;
+    height: auto;
+    position: fixed;
+    margin-top: 600px;
+    background: #888;
+    border: 2px solid #fff;;
+    z-index: 100 ;
+}
+
+.infoCompra >div>.fa-arrow-left {
+    margin-top: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.infoCompra >div> h1{
+    margin-top: 2px;
+    margin-left: 10px;
+}
+
+#compraFinalizada li{
+    margin-left: 20px;
+    margin-top: 10px;
+    list-style:circle;
+}
+
+#compraFinalizada  h4{
+    margin-left: 10px;
+    margin-top: 80px;
+}
+
+#compraFinalizada  h3{
+    margin: 10px;
+    color: yellow;
+}
+
+.label-pagos{
+    margin-left: 20px;
+}
+
+#pagos {
+    margin-top: 5px;
+    width: 200px;
+    margin-left: 20px;
+}
+
+.finalizada {
+    width: 250px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 32%;
+}
+
+/*------------------------------------------RESPONSIVE------------------------------------------*/
+@media (max-width: 680px) {
+    .container {
+        width: 100% ; 
+        
+    }
+    
+    .nav-main {
+        width: 100%;
+        font-size: 3rem;
+        display: flex;
+        align-items: center ;
+        background-color: #000000;
+        position: fixed ;
+        z-index: 3;
+        
+    }
+    
+    .nav-main{
+        max-width:680px;
+    }
+    .nav-brand{
+        width: 100%;
+        max-width:680px;
+    }
+    .nav-menu{
+        max-width:680px;
+    }
+
+    ul.nav-menu {
+        display: none ;
+    }
+
+    #carrito > i{
+        margin-left: 0px;
+    }
+    
+    .cart__count {
+        right: 10px;
+    }
+    
+    .nav-brand{
+        width: 80px ;
+        margin-left: 30px ;
+    }
+
+    .carrousel{
+        width: 100% ;
+        height: 200px ;
+        margin-top: 10rem ;
+        margin-bottom: 2rem;
+    }
+
+    .carrousel img{
+        height: 198px ;
+    }
+
+    .marcas {
+        width: 100% ;
+        height: 10rem;
+        margin-top: 2rem;
+    }
+
+    .container-marcas img {
+        width: 70px;
+    }
+
+    .cards {
+       
+        margin: auto;
+        width: 90%;
+        height: auto; 
+        display: grid ;
+        grid-template-columns: repeat(1, 1fr) ;
+        gap: 2rem;
+        align-items: center ;
+        visibility: visible;
+        text-align: center;
+        border-radius: 3px;
+    }
+
+    .infoCompra{
+        width: 350px;
+        margin-top: 40rem;
+        margin-left: 1rem;
+    }
+    .btn-confirmar{
+        width: 10rem;
+        font-size: 1rem;
+    }
+    .sidebar{
+        width: 100%;
+        font-size: 10px;
+        height: 100%;    
+    }
+    .btn-ConfirmarCompra{
+        font-size: 15px;
+    }
+   
+    #ConfirmarCompra{
+        background-color: #f4e7e7;
+        color: #000000;
+    }
+    .form{
+       width: 100%;
+        height: 350px ;
+        margin-bottom: 2rem;
+    }
+    
+    .contact-form form {
+        display: block ;
+        font-size: 1rem;
+        padding: 0px ;
+        
+    }
+
+    .contact-form form button{
+        font-size: 1rem;
+    }
+    
+    .contact-info {
+        font-size: 8px ;
+    }
+
+    .contact-info h2{
+        font-size: 1rem ;
+    }
+    .social{
+        font-size: 1rem;
+    }
+
+    .footer {
+       width: 100%;
+        height: 110px ;
+        margin-bottom: 0px ;
+        margin-left: 0px ;
+        margin-right: 0% ;
+    }
+
+    .footer h3 {
+        font-size: 15px ;
+    }
+}
+
+
+
